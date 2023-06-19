@@ -1,0 +1,20 @@
+<div class="container">
+  <table class="table">
+    <tbody>
+      <tr
+        class="rows"
+        *ngFor="let row of game$ | async; let i = index"
+        id="{{ i }}"
+      >
+        <td
+          class="column"
+          *ngFor="let cols of row; let j = index"
+          id="{{ j }}"
+          [ngStyle]="{
+            'background-color': cols === 0 ? 'white' : 'black'
+          }"
+        ></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
